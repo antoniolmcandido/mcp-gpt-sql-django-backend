@@ -57,5 +57,5 @@ jobs:
 
             # Reinicia os serviços para aplicar as mudanças
             # (Configuraremos gunicorn e nginx a seguir)
-            sudo systemctl restart gunicorn
+            sudo systemctl restart gunicorn-mcp-backend
             sudo systemctl restart nginx
