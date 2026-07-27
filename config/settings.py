@@ -24,8 +24,9 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "django-insecure-backend-dev-key")
 # Liga ou desliga o modo de depuracao.
 DEBUG = env_bool("DJANGO_DEBUG", "true")
 # Lista de hosts autorizados a acessar o projeto.
-ALLOWED_HOSTS = env_list("DJANGO_ALLOWED_HOSTS",
-                         "127.0.0.1,localhost") or ["*"]
+# ALLOWED_HOSTS = env_list("DJANGO_ALLOWED_HOSTS",
+#                          "127.0.0.1,localhost") or ["*"]
+ALLOWED_HOSTS = ["*"]
 
 # Aplicacoes carregadas pelo backend.
 INSTALLED_APPS = [
