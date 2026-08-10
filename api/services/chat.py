@@ -9,6 +9,41 @@ TOOLS = [
     {
         "type": "function",
         "function": {
+            "name": "criar_tabelas",
+            "description": "Cria tabelas no banco de dados.",
+            "parameters": {
+                "type": "object",
+                "properties": {"query_criacao": {"type": "string"}},
+                "required": ["query_criacao"],
+            },
+        },
+    }, 
+    {
+        "type": "function",
+        "function": {
+            "name": "listar_disciplinas",
+            "description": "Lista todas as disciplinas cadastradas.",
+            "parameters": {"type": "object", "properties": {}},
+        },
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "cadastrar_disciplina",
+            "description": "Cadastra uma nova disciplina.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "nome": {"type": "string"},
+                    "descricao": {"type": "string"},
+                },
+                "required": ["nome", "descricao"],
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
             "name": "cadastrar_aluno",
             "description": "Cadastra um novo aluno.",
             "parameters": {

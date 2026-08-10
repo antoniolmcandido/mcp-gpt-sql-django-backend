@@ -1,6 +1,5 @@
 from .mysql import conectar
 
-
 class AlunoNaoEncontrado(Exception):
     # Excecao usada quando uma operacao tenta acessar um aluno inexistente.
     pass
