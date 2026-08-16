@@ -6,6 +6,7 @@ from .disciplinas import (DisciplinaNaoEncontrada, cadastrar_disciplina_dados,
 from .alunos import (AlunoNaoEncontrado, atualizar_idade_dados,
                      cadastrar_aluno_dados, listar_alunos_dados,
                      remover_aluno_dados)
+from .graficos import gerar_grafico
 
 # Instancia o servidor MCP que publica as funcoes de alunos como ferramentas.
 mcp = FastMCP("Escola Backend")
@@ -62,6 +63,17 @@ def remover_aluno(nome: str):
     # Remove o aluno selecionado e devolve a confirmacao da exclusao.
     aluno = remover_aluno_dados(nome)
     return f"Aluno removido: {aluno['nome']}."
+
+@mcp.tool()
+def gerar_graficos_tool(
+    dados_json: str,
+    tipo_grafico: str = "barras",
+    titulo: str = "Gráfico",
+    xlabel: str = "X",
+    ylabel: str = "Y"
+):
+    # Gera um gráfico a partir de dados em formato JSON.
+    return gerar_grafico(dados_json, tipo_grafico, titulo, xlabel, ylabel)
 
 
 if __name__ == "__main__":
